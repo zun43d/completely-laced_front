@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css';
 export default function Home() {
 	return (
 		<div className={styles.container}>
-			<h1>Connected</h1>
+			<h1>Currently under construstion</h1>
 		</div>
 	);
 }
