@@ -13,7 +13,7 @@ export default function Home() {
 		e.preventDefault();
 		setLoading(true);
 		const email = emailEl.current.value;
-		const res = await addEmail(email).then((res) => {
+		await addEmail(email).then((res) => {
 			setLoading(false);
 			emailEl.current.value = '';
 			alert('Thank you for signing up for our newsletter!');
@@ -57,8 +57,11 @@ export default function Home() {
 				/>
 				<button type="submit">{loading ? 'Loading...' : 'Sign Up'}</button>
 			</form>
-
-			{/* <div style></div> */}
+			<br />
+			<p className={styles.note}>
+				Sign up for exclusive updates, early preview at inventory, free product,
+				newsletter & discount codes...
+			</p>
 		</div>
 	);
 }
