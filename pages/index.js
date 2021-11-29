@@ -3,12 +3,21 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
+import { addEmail } from '../lib/sanityDb';
+
 export default function Home() {
 	const emailEl = useRef();
+	const [loading, setLoading] = useState(false);
+	const 
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
+		setLoading(true);
 		const email = emailEl.current.value;
+		const res = await addEmail(email).then((res) => {
+			console.log(res);
+			setLoading(false);
+		});
 	};
 
 	return (
@@ -46,7 +55,7 @@ export default function Home() {
 					id=""
 					ref={emailEl}
 				/>
-				<button type="submit">Sign up</button>
+				<button type="submit">{loading ? 'Loading...' : 'Sign Up'}</button>
 			</form>
 		</div>
 	);
