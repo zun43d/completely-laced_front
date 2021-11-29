@@ -38,7 +38,8 @@ export default function Home() {
 			<h1 className={styles.open}>Opening Soon</h1>
 			<p className={styles.first}>Be the first to know when we launch</p>
 			<div className={styles.promo} style={{ textAlign: 'center' }}>
-				Promotions, new offers and sales. Directly to your inbox.
+				Sign up for exclusive updates, early preview at inventory, free product,
+				newsletter & discount codes...
 			</div>
 			<form
 				onSubmit={handleSubmit}
@@ -57,11 +58,6 @@ export default function Home() {
 				/>
 				<button type="submit">{loading ? 'Loading...' : 'Sign Up'}</button>
 			</form>
-			<br />
-			<p className={styles.note}>
-				Sign up for exclusive updates, early preview at inventory, free product,
-				newsletter & discount codes...
-			</p>
 		</div>
 	);
 }

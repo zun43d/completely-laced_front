@@ -41,13 +41,6 @@
 	height: 3rem;
 }
 
-.note {
-	font-size: 0.9rem;
-	text-align: center;
-	line-height: 1.2rem;
-	width: 30rem;
-}
-
 @media (max-width: 960px) {
 	.logo {
 		height: 300px;
@@ -77,11 +70,6 @@
 		width: 70vw;
 		line-height: 1.5rem;
 	}
-
-	.note {
-		width: 75vw;
-		font-size: 0.75rem;
-	}
 }
 
 @media (max-width: 400px) {
@@ -97,7 +85,7 @@
 	}
 	.promo {
 		font-size: 0.8rem;
-		width: 60vw;
+		/* width: 60vw; */
 	}
 	.form {
 		height: 2.3rem;
