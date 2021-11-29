@@ -8,7 +8,6 @@ import { addEmail } from '../lib/sanityDb';
 export default function Home() {
 	const emailEl = useRef();
 	const [loading, setLoading] = useState(false);
-	const 
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
