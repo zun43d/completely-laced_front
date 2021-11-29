@@ -1,5 +1,5 @@
 .container {
-	padding: 0 2rem;
+	padding: 0 3rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -28,7 +28,7 @@
 .promo {
 	font-size: 1rem;
 	margin-top: 0;
-	margin-bottom: 1.5rem;
+	margin-bottom: 2rem;
 	line-height: 1rem;
 	padding: 0;
 }
@@ -43,6 +43,9 @@
 }
 
 @media (max-width: 960px) {
+	.container {
+		padding-top: 5rem;
+	}
 	.logo {
 		height: 300px;
 		width: 300px;
@@ -73,9 +76,9 @@
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
 	.container {
-		padding-top: 3rem;
+		padding-top: 4rem;
 	}
 	.logo {
 		height: 300px;
