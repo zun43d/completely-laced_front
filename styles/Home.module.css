@@ -44,7 +44,7 @@
 
 @media (max-width: 960px) {
 	.container {
-		padding-top: 5rem;
+		padding-top: 4rem;
 	}
 	.logo {
 		height: 300px;
@@ -78,7 +78,7 @@
 
 @media (max-width: 450px) {
 	.container {
-		padding-top: 4rem;
+		padding-top: 3rem;
 	}
 	.logo {
 		height: 300px;

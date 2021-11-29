@@ -64,6 +64,17 @@ export default function Home() {
 				/>
 				<button type="submit">{loading ? 'Loading...' : 'Sign Up'}</button>
 			</form>
+
+			<div
+				style={{
+					height: '200px',
+					width: '100%',
+					display: 'inline-block',
+					color: 'white',
+				}}
+			>
+				<br />
+			</div>
 		</div>
 	);
 }
