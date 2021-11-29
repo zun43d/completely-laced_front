@@ -28,9 +28,9 @@ export default function Home() {
 
 			<div className={styles.logo}>
 				<Image
-					src="/completely-laced.png"
-					width={300}
-					height={300}
+					src="/completely-laced-artwork-logo.png"
+					width={400}
+					height={400}
 					alt="Completely Laced"
 					layout="responsive"
 				/>
