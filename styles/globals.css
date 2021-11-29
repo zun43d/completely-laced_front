@@ -9,7 +9,7 @@ body {
 }
 
 body {
-	background: url(../public/Completely\ Laced\ Artwork.jpg) no-repeat;
+	background: url(/Completely\ Laced\ Artwork.jpg) no-repeat;
 	background-size: 100% auto;
 	max-width: 100vw;
 	max-height: 100vh;
