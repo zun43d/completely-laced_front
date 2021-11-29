@@ -27,9 +27,6 @@ export default function Home() {
 			</Head>
 
 			<div className={styles.logo}>
-				<br />
-				<br />
-				<br />
 				<Image
 					src="/completely-laced-artwork-logo.png"
 					width={400}
@@ -38,9 +35,6 @@ export default function Home() {
 					layout="responsive"
 				/>
 			</div>
-
-			<br />
-			<br />
 			<h1 className={styles.open}>Opening Soon</h1>
 			<p className={styles.first}>Be the first to know when we launch</p>
 			<div className={styles.promo} style={{ textAlign: 'center' }}>
