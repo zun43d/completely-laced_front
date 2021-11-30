@@ -6,15 +6,28 @@ import styles from '../styles/Home.module.css';
 import { addEmail } from '../lib/sanityDb';
 
 export default function Home() {
+	const firstNameEl = useRef();
+	const lastNameEl = useRef();
+	const addressEl = useRef();
+	const phoneEl = useRef();
 	const emailEl = useRef();
+
 	const [loading, setLoading] = useState(false);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setLoading(true);
+		const firstName = firstNameEl.current.value;
+		const lastName = lastNameEl.current.value;
+		const address = addressEl.current.value;
+		const phone = phoneEl.current.value;
 		const email = emailEl.current.value;
-		await addEmail(email).then((res) => {
+		await addEmail(firstName, lastName, address, phone, email).then((res) => {
 			setLoading(false);
+			firstNameEl.current.value = '';
+			lastNameEl.current.value = '';
+			addressEl.current.value = '';
+			phoneEl.current.value = '';
 			emailEl.current.value = '';
 			alert('Thank you for signing up for our newsletter!');
 		});
@@ -46,29 +59,35 @@ export default function Home() {
 				className={styles.form}
 				style={{
 					display: 'flex',
-					justifyContent: 'center',
+					flexDirection: 'column',
 					alignItems: 'center',
 				}}
 			>
+				{/* <div
+					style={{
+						// width: '100%',
+						margin: 0,
+						padding: 0,
+						display: 'flex',
+						gap: '10px',
+					}}
+				> */}
+				<input type="text" placeholder="First Name" ref={firstNameEl} />
+				<input type="text" placeholder="Last Name" ref={lastNameEl} />
+				{/* </div> */}
+				<input
+					type="text"
+					placeholder="Enter you mailing address"
+					ref={addressEl}
+				/>
+				<input type="tel" placeholder="Enter your phone number" ref={phoneEl} />
 				<input
 					type="email"
 					placeholder="Enter your email address"
-					id=""
 					ref={emailEl}
 				/>
 				<button type="submit">{loading ? 'Loading...' : 'Sign Up'}</button>
 			</form>
-
-			<div
-				style={{
-					height: '200px',
-					width: '100%',
-					display: 'inline-block',
-					color: 'white',
-				}}
-			>
-				<br />
-			</div>
 		</div>
 	);
 }
