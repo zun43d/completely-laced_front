@@ -88,7 +88,7 @@ export default function Home() {
 			<p>Follow, Like, Save & Subscribe</p>
 			<div className={styles.socials}>
 				<IconContext.Provider
-					value={{ color: 'rgb(78, 78, 78)', className: styles.icons }}
+					value={{ color: 'rgb(50, 50, 50)', className: styles.icons }}
 				>
 					<a href="https://facebook.com" target="_blank" rel="noreferrer">
 						<FaFacebook />
