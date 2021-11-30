@@ -42,7 +42,20 @@
 .form {
 	/* height: 3rem; */
 	width: 30rem;
+	padding-bottom: 1rem;
+}
+
+.socials {
 	padding-bottom: 2rem;
+}
+
+.icons {
+	font-size: 1.8rem;
+	margin: auto 10px;
+	/* text-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+		rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; */
+	-webkit-filter: drop-shadow(2px 2px 2px rgba(51, 51, 51, 0.521));
+	filter: drop-shadow(2px 2px 2px rgba(51, 51, 51, 0.521));
 }
 
 @media (max-width: 960px) {
@@ -101,5 +114,8 @@
 	.form input {
 		/* width: 12rem; */
 		font-size: 0.8rem;
+	}
+	.icons {
+		margin: auto 8px;
 	}
 }

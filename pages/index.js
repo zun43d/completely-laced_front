@@ -2,8 +2,17 @@ import { useRef, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-
 import { addEmail } from '../lib/sanityDb';
+
+import { IconContext } from 'react-icons';
+import {
+	FaFacebook,
+	FaTwitter,
+	FaTiktok,
+	FaInstagram,
+	FaPinterest,
+	FaYoutube,
+} from 'react-icons/fa';
 
 export default function Home() {
 	const fullNameEl = useRef();
@@ -76,6 +85,31 @@ export default function Home() {
 				</div>
 				<button type="submit">{loading ? 'Loading...' : 'Sign Up'}</button>
 			</form>
+			<p>Follow, Like, Save & Subscribe</p>
+			<div className={styles.socials}>
+				<IconContext.Provider
+					value={{ color: 'rgb(78, 78, 78)', className: styles.icons }}
+				>
+					<a href="https://facebook.com" target="_blank" rel="noreferrer">
+						<FaFacebook />
+					</a>
+					<a href="https://instagram.com" target="_blank" rel="noreferrer">
+						<FaInstagram />
+					</a>
+					<a href="https://twitter.com" target="_blank" rel="noreferrer">
+						<FaTwitter />
+					</a>
+					<a href="https://tiktok.com" target="_blank" rel="noreferrer">
+						<FaTiktok />
+					</a>
+					<a href="https://pinterest.com" target="_blank" rel="noreferrer">
+						<FaPinterest />
+					</a>
+					<a href="https://youtube.com" target="_blank" rel="noreferrer">
+						<FaYoutube />
+					</a>
+				</IconContext.Provider>
+			</div>
 		</div>
 	);
 }
