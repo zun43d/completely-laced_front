@@ -22,7 +22,7 @@ export default function Home() {
 		const email = emailEl.current.value;
 		await addEmail(fullName, address, phone, email).then((res) => {
 			setLoading(false);
-			firstNameEl.current.value = '';
+			fullNameEl.current.value = '';
 			addressEl.current.value = '';
 			phoneEl.current.value = '';
 			emailEl.current.value = '';
