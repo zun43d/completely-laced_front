@@ -6,8 +6,7 @@ import styles from '../styles/Home.module.css';
 import { addEmail } from '../lib/sanityDb';
 
 export default function Home() {
-	const firstNameEl = useRef();
-	const lastNameEl = useRef();
+	const fullNameEl = useRef();
 	const addressEl = useRef();
 	const phoneEl = useRef();
 	const emailEl = useRef();
@@ -17,15 +16,13 @@ export default function Home() {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setLoading(true);
-		const firstName = firstNameEl.current.value;
-		const lastName = lastNameEl.current.value;
+		const fullName = fullNameEl.current.value;
 		const address = addressEl.current.value;
 		const phone = phoneEl.current.value;
 		const email = emailEl.current.value;
-		await addEmail(firstName, lastName, address, phone, email).then((res) => {
+		await addEmail(fullName, address, phone, email).then((res) => {
 			setLoading(false);
 			firstNameEl.current.value = '';
-			lastNameEl.current.value = '';
 			addressEl.current.value = '';
 			phoneEl.current.value = '';
 			emailEl.current.value = '';
@@ -54,15 +51,7 @@ export default function Home() {
 				Sign up for exclusive updates, early preview at inventory, free product,
 				newsletter & discount codes...
 			</div>
-			<form
-				onSubmit={handleSubmit}
-				className={styles.form}
-				style={{
-					display: 'flex',
-					flexDirection: 'column',
-					alignItems: 'center',
-				}}
-			>
+			<form onSubmit={handleSubmit} className={styles.form}>
 				{/* <div
 					style={{
 						// width: '100%',
@@ -72,20 +61,19 @@ export default function Home() {
 						gap: '10px',
 					}}
 				> */}
-				<input type="text" placeholder="First Name" ref={firstNameEl} />
-				<input type="text" placeholder="Last Name" ref={lastNameEl} />
-				{/* </div> */}
-				<input
-					type="text"
-					placeholder="Enter you mailing address"
-					ref={addressEl}
-				/>
-				<input type="tel" placeholder="Enter your phone number" ref={phoneEl} />
-				<input
-					type="email"
-					placeholder="Enter your email address"
-					ref={emailEl}
-				/>
+				<div
+					style={{
+						display: 'grid',
+						gridTemplateColumns: '1fr 1fr',
+						gap: '5px',
+						alignItems: 'center',
+					}}
+				>
+					<input type="text" placeholder="Full Name" ref={fullNameEl} />
+					<input type="email" placeholder="Email" ref={emailEl} />
+					<input type="tel" placeholder="Phone Number" ref={phoneEl} />
+					<input type="text" placeholder="Mailing address" ref={addressEl} />
+				</div>
 				<button type="submit">{loading ? 'Loading...' : 'Sign Up'}</button>
 			</form>
 		</div>
