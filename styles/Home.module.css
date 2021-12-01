@@ -98,10 +98,31 @@
 	}
 }
 
-@media (max-width: 450px) {
-	/* .container {
-		padding-top: 4rem;
-	} */
+@media (max-width: 530px) {
+	.container::before {
+		content: '';
+		width: 50%;
+		height: 50%;
+		background: url(/down-left.png) no-repeat;
+		background-size: 100% auto;
+		background-position-y: bottom;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+	}
+	.container::after {
+		content: '';
+		width: 50%;
+		height: 50%;
+		background: url(/down-right.png) no-repeat;
+		background-size: 100% auto;
+		background-position-y: bottom;
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+	}
 	.logo {
 		height: 250px;
 		width: 250px;
