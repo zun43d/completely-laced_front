@@ -21,6 +21,7 @@ export default function Home() {
 	const emailEl = useRef();
 
 	const [loading, setLoading] = useState(false);
+	const [submitted, setSubmitted] = useState(false);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -35,58 +36,72 @@ export default function Home() {
 			addressEl.current.value = '';
 			phoneEl.current.value = '';
 			emailEl.current.value = '';
-			alert('Thank you for signing up for our newsletter!');
+			setSubmitted(true);
+			// alert('Thank you for signing up for our newsletter!');
 		});
 	};
 
 	return (
-		<div className={styles.container}>
+		<div className={`${styles.container} ${submitted ? styles.centerCon : ''}`}>
 			<Head>
 				<title>Completely Laced | Opening soon</title>
 			</Head>
 
-			<div className={styles.logo}>
-				<Image
-					src="/completely-laced-artwork-logo.png"
-					width={400}
-					height={400}
-					alt="Completely Laced"
-					layout="responsive"
-				/>
-			</div>
-			<h1 className={styles.open}>Opening Soon</h1>
-			<p className={styles.first}>Be the first to know when we launch</p>
-			<div className={styles.promo} style={{ textAlign: 'center' }}>
-				Sign up for exclusive updates, early preview at inventory, free product,
-				newsletter & discount codes...
-			</div>
-			<form onSubmit={handleSubmit} className={styles.form}>
-				{/* <div
-					style={{
-						// width: '100%',
-						margin: 0,
-						padding: 0,
-						display: 'flex',
-						gap: '10px',
-					}}
-				> */}
-				<div
-					style={{
-						display: 'grid',
-						gridTemplateColumns: '1fr 1fr',
-						gap: '5px',
-						alignItems: 'center',
-					}}
-				>
-					<input type="text" placeholder="Full Name" ref={fullNameEl} />
-					<input type="email" placeholder="Email" ref={emailEl} />
-					<input type="tel" placeholder="Phone Number" ref={phoneEl} />
-					<input type="text" placeholder="Mailing address" ref={addressEl} />
-				</div>
-				<button type="submit">{loading ? 'Loading...' : 'Sign Up'}</button>
-			</form>
-			<p>Follow, Like, Save & Subscribe</p>
+			{submitted ? (
+				<>
+					<div className={styles.confirm}>
+						<Image
+							src="/Confirmed.png"
+							width={1010}
+							height={400}
+							alt="You've been confirmed! Thank you!"
+						/>
+					</div>
+				</>
+			) : (
+				<>
+					<div className={styles.logo}>
+						<Image
+							src="/completely-laced-artwork-logo.png"
+							width={400}
+							height={400}
+							alt="Completely Laced"
+							layout="responsive"
+						/>
+					</div>
+					<h1 className={styles.open}>Opening Soon</h1>
+					<p className={styles.first}>Be the first to know when we launch</p>
+					<div className={styles.promo} style={{ textAlign: 'center' }}>
+						Sign up for exclusive updates, early preview at inventory, free
+						product, newsletter & discount codes...
+					</div>
+					<form onSubmit={handleSubmit} className={styles.form}>
+						<div
+							style={{
+								display: 'grid',
+								gridTemplateColumns: '1fr 1fr',
+								gap: '5px',
+								alignItems: 'center',
+							}}
+						>
+							<input type="text" placeholder="Full Name" ref={fullNameEl} />
+							<input type="email" placeholder="Email" ref={emailEl} />
+							<input type="tel" placeholder="Phone Number" ref={phoneEl} />
+							<input
+								type="text"
+								placeholder="Mailing address"
+								ref={addressEl}
+							/>
+						</div>
+						<button disabled={loading} type="submit">
+							{loading ? 'Loading...' : 'Sign Up'}
+						</button>
+					</form>
+				</>
+			)}
+
 			<div className={styles.socials}>
+				<p style={{ textAlign: 'center' }}>Follow, Like, Save & Subscribe</p>
 				<IconContext.Provider
 					value={{ color: 'rgb(50, 50, 50)', className: styles.icons }}
 				>
