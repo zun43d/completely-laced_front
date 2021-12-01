@@ -22,6 +22,8 @@ h1 {
 	margin-bottom: 2rem;
 	padding: 0;
 	font-weight: 300;
+	/* color: #d69553; */
+	color: #d4af37;
 }
 
 input {
@@ -118,8 +120,19 @@ a {
 	}
 
 	h1 {
-		font-size: 2rem;
+		font-size: 1.7rem;
 		line-height: 1rem;
-		margin-bottom: 1.2rem;
+		/* margin-bottom: 1.2rem; */
+	}
+
+	input {
+		padding: 0.4rem 0.5rem;
+		height: 2.1rem;
+		margin: 0;
+	}
+
+	button {
+		height: 2.1rem;
+		font-size: 0.7rem;
 	}
 }
