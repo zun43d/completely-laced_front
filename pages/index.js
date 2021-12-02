@@ -72,8 +72,12 @@ export default function Home() {
 					<h1 className={styles.open}>Opening Soon</h1>
 					<p className={styles.first}>Be the first to know when we launch</p>
 					<div className={styles.promo} style={{ textAlign: 'center' }}>
-						Sign up for exclusive updates, early preview at inventory, free
-						product, newsletter & discount codes...
+						<span className={styles.boldGold}>RSVP</span> sign up for{' '}
+						<i className={styles.boldGold}>exclusive</i> updates, inventory
+						preview, <i className={styles.boldGold}>early access</i>, product{' '}
+						<i className={styles.boldGold}>gifting</i>, newsletter,{' '}
+						<i className={styles.boldGold}>private sales</i>, & extended
+						discounts….
 					</div>
 					<form onSubmit={handleSubmit} className={styles.form}>
 						<div
@@ -101,7 +105,9 @@ export default function Home() {
 			)}
 
 			<div className={styles.socials}>
-				<p style={{ textAlign: 'center' }}>Follow, Like, Save & Subscribe</p>
+				<p style={{ textAlign: 'center' }}>
+					Follow, Like, Save, Share & Subscribe
+				</p>
 				<div
 					style={{
 						display: 'flex',
@@ -123,7 +129,7 @@ export default function Home() {
 						</a>
 					</span>
 					<span className={styles.icons}>
-						<a href="https://facebook.com" target="_blank" rel="noreferrer">
+						<a href="https://instagram.com" target="_blank" rel="noreferrer">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
 								<radialGradient
 									id="yOrnnhliCrdS2gy~4tD8ma"
@@ -172,7 +178,11 @@ export default function Home() {
 						</a>
 					</span>
 					<span className={styles.icons}>
-						<a href="https://facebook.com" target="_blank" rel="noreferrer">
+						<a
+							href="https://twitter.com/CompletelyLaced"
+							target="_blank"
+							rel="noreferrer"
+						>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
 								<path
 									fill="#03A9F4"
@@ -182,7 +192,7 @@ export default function Home() {
 						</a>
 					</span>
 					<span className={styles.icons}>
-						<a href="https://facebook.com" target="_blank" rel="noreferrer">
+						<a href="https://tiktok.com" target="_blank" rel="noreferrer">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 48 48"
@@ -217,7 +227,7 @@ export default function Home() {
 						</a>
 					</span>
 					<span className={styles.icons}>
-						<a href="https://facebook.com" target="_blank" rel="noreferrer">
+						<a href="https://pinterest.com" target="_blank" rel="noreferrer">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 48 48"
@@ -233,7 +243,7 @@ export default function Home() {
 						</a>
 					</span>
 					<span className={styles.icons}>
-						<a href="https://facebook.com" target="_blank" rel="noreferrer">
+						<a href="https://youtube.com" target="_blank" rel="noreferrer">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 48 48"
