@@ -129,6 +129,7 @@ a {
 		background-color: #d9d9d9;
 		background: url(/background-mobile.jpg) no-repeat fixed;
 		background-size: 100% auto;
+		overflow-y: hidden;
 	}
 
 	body::before {
