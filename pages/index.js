@@ -69,14 +69,14 @@ export default function Home() {
 							layout="responsive"
 						/>
 					</div>
-					<h1 className={styles.open}>Opening Soon</h1>
+					<h1 className={styles.open}>OPENING SOON</h1>
 					<p className={styles.first}>Be the first to know when we launch</p>
 					<div className={styles.promo} style={{ textAlign: 'center' }}>
 						<span className={styles.boldGold}>RSVP</span> sign up for{' '}
 						<i className={styles.boldGold}>exclusive</i> updates, inventory
 						preview, <i className={styles.boldGold}>early access</i>, product{' '}
 						<i className={styles.boldGold}>gifting</i>, newsletter,{' '}
-						<i className={styles.boldGold}>private sales</i>, & extended
+						<i className={styles.boldGold}>private sales</i>, extended
 						discounts….
 					</div>
 					<form onSubmit={handleSubmit} className={styles.form}>
@@ -106,7 +106,7 @@ export default function Home() {
 
 			<div className={styles.socials}>
 				<p style={{ textAlign: 'center' }}>
-					Follow, Like, Save, Share & Subscribe
+					Follow, Like, Save, Share, Subscribe
 				</p>
 				<div
 					style={{
