@@ -27,7 +27,7 @@
 	font-size: 1.7rem;
 	margin: 0;
 	padding: 0;
-	margin-bottom: 0.5rem;
+	margin-bottom: 0.2rem;
 }
 
 .promo {
@@ -142,9 +142,9 @@
 	}
 	.promo {
 		font-size: 0.9rem;
-		/* padding: 0.3rem 0.65rem; */
-		padding: 0;
-		/* margin-bottom: 0.8rem; */
+		padding: 0rem 0.5rem;
+		margin-bottom: 0.8rem;
+		margin-top: 0.5rem;
 		width: 276px;
 	}
 

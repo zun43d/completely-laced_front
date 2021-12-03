@@ -73,11 +73,11 @@ export default function Home() {
 					<p className={styles.first}>Be the first to know when we launch</p>
 					<div className={styles.promo} style={{ textAlign: 'center' }}>
 						<span className={styles.boldGold}>RSVP</span> sign up for{' '}
-						<i className={styles.boldGold}>exclusive</i> updates, inventory
-						preview, <i className={styles.boldGold}>early access</i>, product{' '}
-						<i className={styles.boldGold}>gifting</i>, newsletter,{' '}
-						<i className={styles.boldGold}>private sales</i>, extended
-						discounts….
+						<span className={styles.boldGold}>exclusive</span> updates inventory
+						preview <span className={styles.boldGold}>early access</span>{' '}
+						product <span className={styles.boldGold}>gifting</span> newsletter{' '}
+						<span className={styles.boldGold}>private sales</span> extended
+						discounts
 					</div>
 					<form onSubmit={handleSubmit} className={styles.form}>
 						<div
