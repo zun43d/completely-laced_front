@@ -120,7 +120,10 @@ export default function Home() {
 
 			<div className={styles.socials}>
 				<p style={{ textAlign: 'center' }}>
-					Follow, Like, Save, Share, Subscribe
+					FOLLOW <span className={styles.boldGold}>|</span> LIKE{' '}
+					<span className={styles.boldGold}>|</span> SAVE{' '}
+					<span className={styles.boldGold}>|</span> SHARE{' '}
+					<span className={styles.boldGold}>|</span> SUBSCRIBE
 				</p>
 				<div
 					style={{
