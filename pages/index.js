@@ -1,41 +1,27 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import { useForm } from 'react-hook-form';
 import styles from '../styles/Home.module.css';
 import { addEmail } from '../lib/sanityDb';
 
-import { IconContext } from 'react-icons';
-import {
-	FaFacebookSquare,
-	FaTwitter,
-	FaTiktok,
-	FaInstagram,
-	FaPinterest,
-	FaYoutube,
-} from 'react-icons/fa';
-
 export default function Home() {
-	const fullNameEl = useRef();
-	const addressEl = useRef();
-	const phoneEl = useRef();
-	const emailEl = useRef();
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors },
+	} = useForm();
 
 	const [loading, setLoading] = useState(false);
 	const [submitted, setSubmitted] = useState(false);
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
+	const handleSignUp = async (data) => {
 		setLoading(true);
-		const fullName = fullNameEl.current.value;
-		const address = addressEl.current.value;
-		const phone = phoneEl.current.value;
-		const email = emailEl.current.value;
+		const { fullName, address, email, phone } = data;
 		await addEmail(fullName, address, phone, email).then((res) => {
 			setLoading(false);
-			fullNameEl.current.value = '';
-			addressEl.current.value = '';
-			phoneEl.current.value = '';
-			emailEl.current.value = '';
+			reset();
 			setSubmitted(true);
 			// alert('Thank you for signing up for our newsletter!');
 		});
@@ -95,7 +81,7 @@ export default function Home() {
 						<span className={styles.boldGold}> SALES</span> &{' '}
 						<span className={styles.boldGold}>EXTENDED</span> DISCOUNTS
 					</div>
-					<form onSubmit={handleSubmit} className={styles.form}>
+					<form onSubmit={handleSubmit(handleSignUp)} className={styles.form}>
 						<div
 							style={{
 								display: 'grid',
@@ -104,13 +90,29 @@ export default function Home() {
 								alignItems: 'center',
 							}}
 						>
-							<input type="text" placeholder="Full Name" ref={fullNameEl} />
-							<input type="email" placeholder="Email" ref={emailEl} />
-							<input type="tel" placeholder="Phone Number" ref={phoneEl} />
+							<input
+								type="text"
+								placeholder="Full Name"
+								className={errors.fullName && styles.errorInput}
+								{...register('fullName', { required: true })}
+							/>
+							<input
+								type="email"
+								placeholder="Email"
+								className={errors.email && styles.errorInput}
+								{...register('email', { required: true })}
+							/>
+							<input
+								type="tel"
+								placeholder="Phone Number"
+								className={errors.phone && styles.errorInput}
+								{...register('phone', { required: true })}
+							/>
 							<input
 								type="text"
 								placeholder="Mailing address"
-								ref={addressEl}
+								className={errors.address && styles.errorInput}
+								{...register('address', { required: true })}
 							/>
 						</div>
 						<button disabled={loading} type="submit">

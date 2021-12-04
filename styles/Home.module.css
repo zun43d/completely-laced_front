@@ -10,7 +10,7 @@
 }
 
 .centerCon {
-	justify-content: space-evenly;
+	justify-content: center;
 }
 
 .main {
@@ -73,6 +73,10 @@
 	font-family: 'Myriad Pro';
 	font-weight: 800;
 	color: var(--gold-color);
+}
+
+.errorInput {
+	border: 1px solid red;
 }
 
 @media (max-width: 960px) {
