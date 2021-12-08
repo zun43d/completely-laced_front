@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import styles from '../styles/Home.module.css';
-import { addEmail } from '../lib/sanityDb';
 
 export default function Home() {
 	const {
@@ -19,12 +18,32 @@ export default function Home() {
 	const handleSignUp = async (data) => {
 		setLoading(true);
 		const { fullName, address, email, phone } = data;
-		await addEmail(fullName, address, phone, email).then((res) => {
-			setLoading(false);
-			reset();
-			setSubmitted(true);
-			// alert('Thank you for signing up for our newsletter!');
-		});
+		// await addEmail(fullName, address, phone, email).then((res) => {
+		// 	setLoading(false);
+		// 	reset();
+		// 	setSubmitted(true);
+		// 	// alert('Thank you for signing up for our newsletter!');
+		// });
+
+		await fetch('/api/submit', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ fullName, address, email, phone }),
+		})
+			.then((res) => {
+				res.json();
+			})
+			.then((res) => {
+				console.log(res);
+				setLoading(false);
+				reset();
+				setSubmitted(true);
+			})
+			.catch(() => {
+				alert('Sorry, something really went wrong! Try again.');
+			});
 	};
 
 	return (
