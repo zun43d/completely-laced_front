@@ -169,7 +169,11 @@ export default function Home() {
 						</a>
 					</span>
 					<span className={styles.icons}>
-						<a href="https://instagram.com" target="_blank" rel="noreferrer">
+						<a
+							href="https://instagram.com/completelylaced/"
+							target="_blank"
+							rel="noreferrer"
+						>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
 								<radialGradient
 									id="yOrnnhliCrdS2gy~4tD8ma"
